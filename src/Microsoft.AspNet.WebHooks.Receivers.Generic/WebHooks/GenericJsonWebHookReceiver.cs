@@ -58,7 +58,8 @@ namespace Microsoft.AspNet.WebHooks
             await EnsureValidCode(request, id);
 
             // Read the request entity body
-            JObject data = await ReadAsJsonAsync(request);
+            //JObject data = await ReadAsJsonAsync(request);
+            JArray data = await ReadAsJsonArrayAsync(request);
 
             // Get the action
             NameValueCollection queryParameters = request.RequestUri.ParseQueryString();
